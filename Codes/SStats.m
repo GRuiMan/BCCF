@@ -1,8 +1,5 @@
 function Data=SStats(Cr,Cf)
-% Copyright (c) 2023, Zhaoxu Liu / slandarer
-% Zhaoxu Liu / slandarer (2023). taylor diagram class 
-% (https://www.mathworks.com/matlabcentral/fileexchange/130889-taylor-diagram-class), 
-% MATLAB Central File Exchange.
+
 Cr = Cr(:); 
 Cf = Cf(:);
 nanInd = isnan(Cr)|isnan(Cf);

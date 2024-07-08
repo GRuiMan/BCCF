@@ -1,4 +1,3 @@
-# Codes_of_Paper
 # 代码以及数据
 
 ## 文件夹Codes
@@ -18,6 +17,26 @@
 2020年中国区域(25$\sim$41°N,61$\sim$105°E)日平均降水率，从2020年1月1日到2020年12月31日，时间分辨率为1天。其中tpmfd_prcp_d_20200101.nc为2020年1月1日的数据，依次类推。
 
 来源网址：[国家青藏高原科学数据中心 (tpdc.ac.cn)](https://data.tpdc.ac.cn/zh-hans/data/e45be858-bcb2-4fea-bd10-5c2662cb34a5)
+
+### 文件夹Mat_Files
+
+BC_ALL.mat：考虑所有因素作用的黑炭浓度
+
+BC_PBL.mat：去除边界层因素作用的黑炭浓度
+
+BC_RAIN.mat：去除降雨清除作用的黑炭浓度
+
+BC_REAL.mat：真实黑炭浓度
+
+BC_WIND.mat：去除风力输送影响的黑炭浓度
+
+Boundary_layer_height_cal.mat：计算出来的边界层高度
+
+Boundary_layer_height_real.mat：实际的边界层高度
+
+### 文件夹TPBoundary_new
+
+青藏高原的地形数据
 
 ### 数据
 
@@ -40,6 +59,8 @@ tmin.2m.gauss.2020.nc：高斯格点上的2020年全球2m日最低气温，时�
 uwnd.10m.gauss.2020.nc：高斯格点上的2020年全球10米纬向风速。
 
 vwnd.10m.gauss.2020.nc：高斯格点上的2020年全球10米经向风速。
+
+topo2deg.nc：全球地形数据，用来画图一地形的。
 
 来源网址：[NCEP-NCAR Reanalysis 1: NOAA Physical Sciences Laboratory NCEP-NCAR Reanalysis 1](https://psl.noaa.gov/data/gridded/data.ncep.reanalysis.html)
 

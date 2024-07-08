@@ -1,5 +1,5 @@
 classdef STaylorDiag < handle
-% Copyright (c) 2023, Zhaoxu Liu / slandarer
+
     properties
         STATS;  % STD RMSD and COR
         ax; TickLength=[.015,.008];
@@ -134,7 +134,7 @@ classdef STaylorDiag < handle
         end
         function txtHdl=SText(obj,STD,~,COR,varargin)
             tTheta = acos(COR);
-            txtHdl = text(obj.ax,cos(tTheta).*STD,sin(tTheta).*STD,varargin{:});
+            txtHdl = text(obj.ax,cos(tTheta).*STD-2,sin(tTheta).*STD+2,varargin{:});
         end
         % =================================================================
         function set(obj,target,varargin)
