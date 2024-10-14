@@ -20,7 +20,7 @@
 
 **Pre2020**, data on rain intensity in Asia in 2020, with a temporal resolution of 1 day, from [National Tibetan Plateau Science Data Centre (tpdc.ac.cn)](https://data.tpdc.ac.cn/zh-hans/data/e45be858-bcb2-4fea-bd10-)
 
-**namco_data.xlsx**, data measured by some instruments at Namucuo station, see the first sheet data description.
+**namco_data.xlsx**, data measured by some instruments at namco station, see the first sheet data description.
 
 **namco_BC.xlsx**, data collated and saved separately from the 4th sheet in namco_data.xlsx. Black carbon concentration data from August to September 2020 at Namco station, with 1 hour time resolution.
 
