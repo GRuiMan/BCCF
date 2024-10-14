@@ -1,70 +1,91 @@
-# 代码以及数据
+# Codes&Data
 
-## 文件夹Codes
+## Codes
 
-画的各张图像的代码，其中环境为MATLAB2023b+Python3.11开发环境以及相应的库，画图二的时候是在MATLAB中调用的Python3.11，可能会出现MATLAB崩溃的情形，按照提示修改即可。
+**Data1_height_sim_real.m**,Simulated boundary layer height,and produce simulated boundary layer height data,reanalysis boundary layer height.
 
-## 文件夹Data
+**Data2_sensitivity_analysis.m**,sensitivity analysis,using 7 models,produce Mat data
 
-### 文件夹PBL2020:
+**Figure1_threeDMapDemo.m**,plot the Figure1
 
-2020年中国地区边界层数据，从2020年1月1日00时到2020年12月31日21时，时间分辨率为3小时。其中2020010100.nc为2020年1月1日00时的数据，依次类推。
+**Figures_simulated_sensitivity.ipynb**,plot the Figure2,3,4
 
-来源网址：[全球逐三小时陆地高分辨率边界层高度数据集（2017-2021）- 时空三极环境大数据平台 (tpdc.ac.cn)](https://poles.tpdc.ac.cn/zh-hans/data/311e650c-4da1-4a8e-8d2d-91a268ceed78/?q=)
+**taylor.py**,function file,plot taylor figures
 
-### 文件夹Pre2020
+**Mat_Files**,save Mat files produced from **Data2_sensitivity_analysis.m**
 
-2020年中国区域(25$\sim$41°N,61$\sim$105°E)日平均降水率，从2020年1月1日到2020年12月31日，时间分辨率为1天。其中tpmfd_prcp_d_20200101.nc为2020年1月1日的数据，依次类推。
+## Data
 
-来源网址：[国家青藏高原科学数据中心 (tpdc.ac.cn)](https://data.tpdc.ac.cn/zh-hans/data/e45be858-bcb2-4fea-bd10-5c2662cb34a5)
+**PBL2020**, 2020 data on boundary layer heights in the Chinese region, with a time resolution of 3 hours.
 
-### 文件夹Mat_Files
+**Pre2020**, data on rain intensity in Asia in 2020, with a temporal resolution of 1 day, from [National Tibetan Plateau Science Data Centre (tpdc.ac.cn)](https://data.tpdc.ac.cn/zh-hans/data/e45be858-bcb2-4fea-bd10-)
 
-BC_ALL.mat：考虑所有因素作用的黑炭浓度
+**namco_data.xlsx**, data measured by some instruments at Namucuo station, see the first sheet data description.
 
-BC_PBL.mat：去除边界层因素作用的黑炭浓度
+**namco_BC.xlsx**, data collated and saved separately from the 4th sheet in namco_data.xlsx. Black carbon concentration data from August to September 2020 at Namco station, with 1 hour time resolution.
 
-BC_RAIN.mat：去除降雨清除作用的黑炭浓度
+**prate.sfc.gauss.2020.nc**, global surface precipitation rain intensity for 2020
 
-BC_REAL.mat：真实黑炭浓度
+**topo2deg.nc**, topographic data
 
-BC_WIND.mat：去除风力输送影响的黑炭浓度
+**uwnd.10m.gauss.2020.nc**, 10-metre latitudinal winds for 2020
 
-Boundary_layer_height_cal.mat：计算出来的边界层高度
+**vwnd.10m.gauss.2020.nc**, 10 metre meridional winds for 2020
 
-Boundary_layer_height_real.mat：实际的边界层高度
+Source URL: [NCEP-NCAR Reanalysis 1: NOAA Physical Sciences Laboratory NCEP-NCAR Reanalysis 1](https://psl.noaa.gov/data/gridded/data.ncep. reanalysis.html)
 
-### 文件夹TPBoundary_new
+## Figures
 
-青藏高原的地形数据
+Figure1_China3dTopography_and_the_Role_of_Meteorological_Factors.png
 
-### 数据
+Figure2_Observation and Simulation.svg
 
-namco_data.xlsx：见第一个sheet数据说明。
+Figure3_Seven different simulation results.svg
 
-namco_BC.xlsx：根据namco_data.xlsx中第4个sheet整理并另存的数据。纳木错站2020年8月至9月的黑炭浓度数据，时间分辨率1小时。
+Figure4_Taylor diagram of seven different simulation results.svg
 
-air.sig995.2020.nc：2020年$\sigma$为0.995层上的全球气温数据，时间分辨率为1天。共366个时间层次。
+# 代码和数据
 
-air.sig995.day.ltm.1991-2020.nc：1991-2020年$\sigma$为0.995层上的全球气候态日气温数据，时间分辨率为1天。共366个时间层次。每天的三十年平均气温。
+## 代码
 
-air.sig995.mon.ltm.1991-2020.nc：1991-2020年$\sigma$为0.995层上的全球气候态月气温数据，时间分辨率为1月。共12个时间层次，每月的三十年平均气温。
+**Data1_height_sim_real.m**，对边界层进行模拟，输出模拟出的边界层高度数据1_height_sim.mat，以及再分析的边界层高度数据1_height_real.mat。
 
-prate.sfc.gauss.2020.nc：高斯格点上的2020年全球地表降水率，时间分辨率为1天。
+**Data2_sensitivity_analysis.m**，搭建模型进行敏感性分析，输出观测数据BC_real.mat，考虑所有因素模拟出的数据BC_control.mat，以及不同实验的输出BC_s11.mat,BC_s12.mat,BC_s13.mat,BC_s21.mat,BC_s22.mat,BC_s23.mat。
 
-tmax.2m.gauss.2020.nc：高斯格点上的2020年全球2m日最高气温，时间分辨率为1天。
+**Figure1_threeDMapDemo.m**，画图一示意图的。
 
-tmin.2m.gauss.2020.nc：高斯格点上的2020年全球2m日最低气温，时间分辨率为1天。
+**Figures_simulated_sensitivity.ipynb**，画图二观测与模拟图，图三观测与实验图，图四泰勒图
 
-uwnd.10m.gauss.2020.nc：高斯格点上的2020年全球10米纬向风速。
+**taylor.py**，画泰勒图的函数
 
-vwnd.10m.gauss.2020.nc：高斯格点上的2020年全球10米经向风速。
+**Mat_Files**，保存了Data2_sensitivity_analysis.m进行数值试验的输出。
 
-topo2deg.nc：全球地形数据，用来画图一地形的。
+## 数据
+
+**PBL2020**，2020年中国地区边界层高度的数据，时间分辨率3小时
+
+**Pre2020**，2020年亚洲地区雨强的数据，时间分辨率1天，来源网址：[国家青藏高原科学数据中心 (tpdc.ac.cn)](https://data.tpdc.ac.cn/zh-hans/data/e45be858-bcb2-4fea-bd10-5c2662cb34a5)
+
+**namco_data.xlsx**，纳木错站的一些仪器所测数据，见第一个sheet数据说明。
+
+**namco_BC.xlsx**，根据namco_data.xlsx中第4个sheet整理并另存的数据。纳木错站2020年8月至9月的黑炭浓度数据，时间分辨率1小时。
+
+**prate.sfc.gauss.2020.nc**，2020年全球地表降水雨强
+
+**topo2deg.nc**，地形数据
+
+**uwnd.10m.gauss.2020.nc**，2020年10米纬向风
+
+**vwnd.10m.gauss.2020.nc**，2020年10米经向风
 
 来源网址：[NCEP-NCAR Reanalysis 1: NOAA Physical Sciences Laboratory NCEP-NCAR Reanalysis 1](https://psl.noaa.gov/data/gridded/data.ncep.reanalysis.html)
 
-代码运行问题联系：202183300708@nuist.edu.cn/3588430252@qq.com
+## 图片
 
+Figure1_中国3d地形图与气象因子作用.png
 
+Figure2_观测与模拟.svg
 
+Figure3_七种不同的模拟结果.svg
+
+Figure4_七种不同模拟结果的泰勒图.svg
