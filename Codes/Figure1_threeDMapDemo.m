@@ -24,18 +24,29 @@ elevation_china(elevation_china <= 0) = non_land_value;
 
 [lon_china, lat_china] = meshgrid(lon_china, lat_china);
 
-colors = [
-0.564705882	0.933333333	0.564705882	; %Light green (plains)
-126.58180058/255, 145.68215553/255,113.55953533/255; %(higer plains)
+% colors = [
+% 0.564705882	0.933333333	0.564705882	; %Light green (plains)
+% 126.58180058/255, 145.68215553/255,113.55953533/255; %(higer plains)
 % 0.678431373	1	0.184313725	;         %Yellow-green (foothills)
-0.823529412	0.705882353	0.549019608	; %Light brown (lower mountains)
-0.545098039	0.270588235	0.074509804	; %Brown (mountains)
-0.360784314	0.250980392	0.2	;         %Dark brown (high mountains)
-0.82745098	0.82745098	0.82745098	; %Light gray (snow-capped peaks)
-1	1	1	;                         %White (highest peaks and snow)
+% 0.823529412	0.705882353	0.549019608	; %Light brown (lower mountains)
+% 0.545098039	0.270588235	0.074509804	; %Brown (mountains)
+% 0.360784314	0.250980392	0.2	;         %Dark brown (high mountains)
+% 0.82745098	0.82745098	0.82745098	; %Light gray (snow-capped peaks)
+% 1	1	1	;                         %White (highest peaks and snow)
+% 
+% ];
 
-];
-
+colors=[
+     85  180  180 ;%（淡青色） 0 米:
+ 50  160  160 ;%（青色） 500 米:
+ 49  148  148 ;%（深青色），1000 米:
+ 150  115  115 ;%（棕色），2000 米:
+ 200  85  85 ;%（橙色），3000 米:
+ 225  100  100 ;%（浅红色），4000 米:
+ 245  200  200 ;%（淡灰色），5000 米:
+ 255  255  255 ;%（白色），6000 米:
+    ];
+colors=colors/255;
 n_bins = 100;
 cmap = interp1(linspace(0, 1, size(colors, 1)), colors, linspace(0, 1, n_bins));
 

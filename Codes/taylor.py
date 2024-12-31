@@ -6,7 +6,7 @@ from mpl_toolkits.axisartist import grid_finder
 import numpy as np
 import matplotlib.pyplot as plt
 
-class TaylorDiagram(object):
+class TaylorDiagram:
     def __init__(self, fig, refsample, r2_locs):
         self.fig = fig
         self.refsample = refsample
@@ -29,23 +29,24 @@ class TaylorDiagram(object):
         ax = floating_axes.FloatingSubplot(self.fig, 111, grid_helper=ghelper)
         self.fig.add_subplot(ax)
 
+        labelsize = 25
         ax.axis["top"].set_axis_direction("bottom")
         ax.axis["top"].toggle(ticklabels=True, label=True)
         ax.axis["top"].major_ticklabels.set_axis_direction("top")
         ax.axis["top"].label.set_axis_direction("top")
         ax.axis["top"].label.set_text("Correlation")
         ax.axis["top"].label.set_fontsize(20)           # Increase label font size
-        ax.axis["top"].major_ticklabels.set_fontsize(15)  # Increase tick label font size
+        ax.axis["top"].major_ticklabels.set_fontsize(labelsize)  # Increase tick label font size
 
         ax.axis["left"].set_axis_direction("bottom")
         ax.axis["left"].label.set_text("Standard deviation")
         ax.axis["left"].label.set_fontsize(20)          # Increase label font size
-        ax.axis["left"].major_ticklabels.set_fontsize(15)  # Increase tick label font size
+        ax.axis["left"].major_ticklabels.set_fontsize(labelsize)  # Increase tick label font size
 
         ax.axis["right"].set_axis_direction("top")
         ax.axis["right"].toggle(ticklabels=True)
         ax.axis["right"].major_ticklabels.set_axis_direction("left")
-        ax.axis["right"].major_ticklabels.set_fontsize(15)  # Increase tick label font size
+        ax.axis["right"].major_ticklabels.set_fontsize(labelsize)  # Increase tick label font size
 
         ax.axis["bottom"].set_visible(False)
         ax.grid(True)
